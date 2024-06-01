@@ -5,6 +5,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,8 +17,14 @@ public class WebApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(WebApplication.class.getResource("web-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
+
+        // Set the icon of the application window
+        stage.getIcons().add(new Image(WebApplication.class.getResourceAsStream("icon.png")));
+
+        // Set the stage to be maximized
+        stage.setMaximized(true);
+
         stage.setTitle("GD Hiruna");
-        stage.setMaximized(true); // Set the stage to be maximized
         stage.show();
     }
 
